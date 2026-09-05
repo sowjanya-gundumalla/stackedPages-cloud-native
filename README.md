@@ -2,9 +2,11 @@
 
 A production-style CI/CD pipeline that builds, tests, deploys, and monitors a 3-tier bookstore e-commerce application (StackedPages) on AWS EKS. Built as a hands-on capstone covering Terraform, Jenkins, Docker, Kubernetes, and Prometheus/Grafana.
 
-> **Note on naming:** the application is branded StackedPages, but the underlying Kubernetes namespace, ECR repository naming, and ingress resource names below still use the original `shopnow` identifier — these are infrastructure-level names left unchanged from the original scaffold, not a typo.
-
 ![Architecture](docs/screenshots/architecture-diagram.png)
+
+**StackedPages storefront:**
+
+![StackedPages storefront](docs/screenshots/frontend.png)
 
 ---
 
@@ -55,8 +57,6 @@ Terraform provisions: VPC, EC2 (Jenkins), EKS cluster + node group,
 IAM roles, S3/DynamoDB (state). State is never touched by Jenkins —
 Terraform is run manually, per project scope (see "Scope decisions" below).
 ```
-
-An editable version of this diagram (`.drawio`) is in `docs/shopnow-architecture.drawio` — open it at [app.diagrams.net](https://app.diagrams.net).
 
 ---
 
